@@ -1,4 +1,4 @@
-package com.smartqa.smartqa;
+package com.smartqa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
