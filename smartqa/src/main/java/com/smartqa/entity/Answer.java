@@ -1,5 +1,7 @@
 package com.smartqa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "t_answer")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Answer {
 
     @Id
@@ -23,6 +26,7 @@ public class Answer {
     @Column(columnDefinition = "TEXT")
     private String content;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id", nullable = false)
     private Question question;
